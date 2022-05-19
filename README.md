@@ -25,6 +25,8 @@
 | item_name | string     | null: false                    | 
 | details   | text       | null: false                    |
 | price     | integer    | null: false                    |
+| commission| integer    | null: false                    |
+| benefit   | integer    | null: false                    |
 | user      | references | null: false, foreign_key: true |
 
 ### Association
