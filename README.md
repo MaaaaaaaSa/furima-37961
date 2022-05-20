@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :comments
+- has_many :buys
 
 ## itemsテーブル
 
@@ -31,10 +31,10 @@
 
 ### Association
 
-- belongs_to user
-- has_one buys
+- belongs_to :user
+- has_one :buys
 
-## buys テーブル
+## deliveries
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | -----------------------------  |
@@ -43,9 +43,20 @@
 | address       | integer    | null: false                    |
 | building_name | string     |                                |
 | phone         | integer    | null: false                    |
-| use           | references | null: false, foreign_key: true |
-| item          | references | null: false, foreign_key: true |
+| buy           | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to user
-- belongs_to item
+- belongs_to :buy
+
+
+## buys テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | -----------------------------  |
+| item          | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one :deliveries
