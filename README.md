@@ -42,10 +42,11 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | -----------------------------  |
 | postal_code   | integer    | null: false                    |
+| prefecture    | integer    | null: false                    |
 | citys         | string     | null: false                    |
-| address       | integer    | null: false                    |
+| address       | string     | null: false                    |
 | building_name | string     |                                |
-| phone         | integer    | null: false                    |
+| phone         | string     | null: false                    |
 | buy           | references | null: false, foreign_key: true |
 
 ### Association
