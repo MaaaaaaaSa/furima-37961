@@ -24,12 +24,12 @@
 | ------------------- | ---------- | -----------------------------  |
 | item_name           | string     | null: false                    | 
 | product_description | text       | null: false                    |
-| price               | integer    | null: false                    |
+| category_id         | integer    | null: false                    |
 | item_condition_id   | integer    | null: false                    |
 | postage_id          | integer    | null: false                    |
 | prefecture_id       | integer    | null: false                    |
 | shipping_time_id    | integer    | null: false                    |
-| category_id         | integer    | null: false                    |
+| price               | integer    | null: false                    |
 | user                | references | null: false, foreign_key: true |
 
 ### Association
