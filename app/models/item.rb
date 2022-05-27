@@ -4,10 +4,10 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to :category
   belongs_to_active_hash :category
-  belongs_to :item_condition
-  belongs_to :postage
-  belongs_to :prefecture
-  belongs_to :shipping_time
+  belongs_to_active_hash :item_condition
+  belongs_to_active_hash :postage
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :shipping_time
 
   validates :image, presence: true
   validates :item_name, presence: true, length: { minimum: 1, maximum: 40 }
