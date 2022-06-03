@@ -6,7 +6,7 @@ class OrderDeliverie
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyden(-)"}
     validates :citys
     validates :address
-    validates :phone, format: {with: /[0-9]{10,11}/}
+    validates :phone, format: {with: /\A\d{10,11}\z/}
     validates :user_id
     validates :item_id
   end
