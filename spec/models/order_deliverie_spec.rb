@@ -32,17 +32,17 @@ RSpec.describe OrderDeliverie, type: :model do
       it '数字のみでは購入できない' do
         @order_deliverie.postal_code = '1234567'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Postal code is invalid. Include hyden(-)")
+        expect(@order_deliverie.errors.full_messages).to include('Postal code is invalid. Include hyden(-)')
       end
       it '半角文字列以外では購入できない' do
         @order_deliverie.postal_code = '１２３-４５６７'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Postal code is invalid. Include hyden(-)")
+        expect(@order_deliverie.errors.full_messages).to include('Postal code is invalid. Include hyden(-)')
       end
       it '「3桁ハイフン4桁」以外では購入できない' do
         @order_deliverie.postal_code = '1234-567'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Postal code is invalid. Include hyden(-)")
+        expect(@order_deliverie.errors.full_messages).to include('Postal code is invalid. Include hyden(-)')
       end
       it 'prefecture_idが空の場合は購入できない' do
         @order_deliverie.prefecture_id = ''
@@ -72,17 +72,17 @@ RSpec.describe OrderDeliverie, type: :model do
       it 'phoneが9けた以下では購入できない' do
         @order_deliverie.phone = '090111222'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Phone is invalid")
+        expect(@order_deliverie.errors.full_messages).to include('Phone is invalid')
       end
       it 'phoneが12けた以上では購入できない' do
         @order_deliverie.phone = '090011112222'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Phone is invalid")
+        expect(@order_deliverie.errors.full_messages).to include('Phone is invalid')
       end
       it 'phoneが半角数字以上では購入できない' do
         @order_deliverie.phone = '０１２０-００−００００'
         @order_deliverie.valid?
-        expect(@order_deliverie.errors.full_messages).to include("Phone is invalid")
+        expect(@order_deliverie.errors.full_messages).to include('Phone is invalid')
       end
     end
   end
