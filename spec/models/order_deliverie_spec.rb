@@ -19,6 +19,11 @@ RSpec.describe OrderDeliverie, type: :model do
     end
 
     context '商品購入できない場合' do
+      it 'tokenが空では購入できない' do
+        @order_deliverie.token = nil
+        @order_deliverie.valid?
+        expect(@order_deliverie.errors.full_messages).to include("Token can't be blank")
+      end
       it 'postal_codeが空の場合は購入できない' do
         @order_deliverie.postal_code = ''
         @order_deliverie.valid?
