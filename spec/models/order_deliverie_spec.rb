@@ -84,6 +84,16 @@ RSpec.describe OrderDeliverie, type: :model do
         @order_deliverie.valid?
         expect(@order_deliverie.errors.full_messages).to include('Phone is invalid')
       end
+      it 'userが紐付いていなければ購入できない' do
+        @order_deliverie.user_id = nil
+        @order_deliverie.valid?
+        expect(@order_deliverie.errors.full_messages).to include("User can't be blank")
+      end
+      it 'itemが紐付いていなければ購入できない' do
+        @order_deliverie.item_id = nil
+        @order_deliverie.valid?
+        expect(@order_deliverie.errors.full_messages).to include("Item can't be blank")
+      end
     end
   end
 end
