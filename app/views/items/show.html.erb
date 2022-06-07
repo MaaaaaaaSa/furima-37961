@@ -77,17 +77,17 @@
   </div>
   <%# /商品の概要 %>
 
-<div id="comments" class="comments">
-  <% if @item.comments.present? %>
-  <h4>＜コメント一覧＞</h4>
-  <% end %>
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <p class="user-info"><%= comment.user.nickname %></p>
-        <p class="comment-content"><%= comment.text%></p>
-      </div>
+  <div id="comments" class="comments">
+    <% if @item.comments.present? %>
+    <h4>＜コメント一覧＞</h4>
     <% end %>
-</div>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p class="user-info"><%= comment.user.nickname %></p>
+          <p class="comment-content"><%= comment.text%></p>
+        </div>
+      <% end %>
+  </div>
 
   <div class="comment-box">
     <% if user_signed_in? && @item.order.blank? %>
