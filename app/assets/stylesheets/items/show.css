@@ -141,6 +141,22 @@
 
 /* /商品の概要 */
 
+.comments {
+  width: 40vw;
+  margin: 5vh 0 0 0;
+
+}
+
+.user-info {
+  font-weight: 600;
+}
+
+.comment-content {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
 .comment-box {
   width: 40vw;
   background-color: #fff;
